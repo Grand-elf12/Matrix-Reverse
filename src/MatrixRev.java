@@ -1,21 +1,28 @@
-import java.util.Arrays;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class MatrixRev {
+public class Main {
     public static void main(String[] args) {
-    int[] number1 = new int[5];
-    number1[0]=1;
-    number1[1]=2;
-    int[] number2 = {2,3,4,5};
-    Arrays.sort(number2);
-        System.out.println(Arrays.toString(number2));
-        System.out.println(Arrays.toString(number1));
-        int[][] numb = new int[2][3];
-        numb[0][0]=1;
-        int[][] numb2 = {{1,2},{3,4}};
-        System.out.println(Arrays.deepToString(numb));
-
-
+        int n;
+        System.out.println("enter matrix size");
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        Integer ar[][] = new Integer[n][n];
+        System.out.println("enter matrix elements:");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                ar[i][j] = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < n; i++){
+            for(int j=n-1;j>=0;j--){
+                System.out.print(ar[j][i]+" ");
+            }
+            System.out.println();
+        }
     }
 }
